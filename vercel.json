@@ -1,0 +1,32 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "client/dist",
+  "framework": null,
+  "functions": {
+    "api/index.mjs": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.mjs"
+    },
+    {
+      "source": "/((?!uploads/|assets/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/uploads/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=604800, immutable"
+        }
+      ]
+    }
+  ]
+}

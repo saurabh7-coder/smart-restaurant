@@ -12,3 +12,6 @@ server/uploads/*
 !server/uploads/dishes/
 .DS_Store
 coverage/
+
+# Vercel local project link
+.vercel
