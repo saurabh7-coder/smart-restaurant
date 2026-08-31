@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+.env
+.env.local
+*.log
+npm-debug.log*
+# Customer-uploaded images are runtime data and stay out of the repo, but the
+# bundled dish photos that ship with the demo menu are part of the project.
+server/uploads/*
+!server/uploads/.gitkeep
+!server/uploads/dishes/
+.DS_Store
+coverage/
