@@ -14,6 +14,14 @@ export default async function handler(req, res) {
       CLIENT_URL: process.env.CLIENT_URL || null,
       NODE_ENV: process.env.NODE_ENV || null,
     },
+    /*
+     * Names only, never values. If a variable was saved with an invisible
+     * character or trailing space in its NAME, it will show up here verbatim
+     * — mangled — which is exactly the evidence needed.
+     */
+    customEnvNames: Object.keys(process.env)
+      .filter((k) => !/^(VERCEL|AWS_|LAMBDA|_|NOW_|PATH$|NODE_|TZ$|PWD$|SHLVL|HOME$|LANG)/.test(k))
+      .sort(),
   };
   try {
     await import('../server/src/app.js');
