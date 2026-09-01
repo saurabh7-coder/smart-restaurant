@@ -306,9 +306,9 @@ seeder so there is one source of truth for it.
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Admin | `admin@restaurant.test` | `Admin@12345` |
-| Staff | `staff@restaurant.test` | `Staff@12345` |
-| Customer | `rahul@example.test` | `Customer@123` |
+| Admin | `admin@restaurant.test` 
+| Staff | `staff@restaurant.test` 
+| Customer | `rahul@example.test`
 
 Change these in `server/.env` before seeding, and never use them in production.
 
